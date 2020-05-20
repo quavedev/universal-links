@@ -32,6 +32,8 @@ In your settings
 In your server
 
 ```javascript
+import { Meteor } from 'meteor/meteor';
+
 import { registerUniversalLinksHandler } from 'meteor/quave:universal-links';
 
 Meteor.startup(() => {
