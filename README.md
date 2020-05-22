@@ -77,6 +77,13 @@ export const appleAppSiteAssociation = (req, res) => {
 
   createResponderAppleAppSiteAssociation(nativeStoresInfo)(req, res);
 };
+
+Meteor.startup(() => {
+  WebApp.connectHandlers.use(
+    APPLE_APP_SITE_ASSOCIATION_PATH,
+    Meteor.bindEnvironment(appleAppSiteAssociation)
+  );
+});
 ```
 
 ### License
