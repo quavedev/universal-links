@@ -1,6 +1,6 @@
 Package.describe({
   name: 'quave:universal-links',
-  version: '1.0.0',
+  version: '1.0.1',
   summary: 'Utility package to configure iOS Universal Links',
   git: 'https://github.com/quavedev/universal-links',
 });

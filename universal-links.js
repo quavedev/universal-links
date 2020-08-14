@@ -8,7 +8,7 @@ const settings = getSettings({ packageName: PACKAGE_NAME });
 export const APPLE_APP_SITE_ASSOCIATION_PATH = '/apple-app-site-association';
 
 export const respondAppleAppSiteAssociation = (req, res, customSettings) => {
-  const { appleTeamId, appleBundleId } =
+  const { appleTeamId, appleBundleId, paths } =
     customSettings && customSettings.appleTeamId ? customSettings : settings;
   if (!appleTeamId || !appleBundleId) {
     res.setHeader('Content-Type', 'text/html');
@@ -25,7 +25,7 @@ export const respondAppleAppSiteAssociation = (req, res, customSettings) => {
       details: [
         {
           appID: `${appleTeamId}.${appleBundleId}`,
-          paths: ['*'],
+          paths: paths || ['*'],
         },
       ],
     },
